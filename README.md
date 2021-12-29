@@ -1,4 +1,4 @@
-# ErerythingIsOkBot
+# EverythingIsOkBot
 Telegram bot for perfect efficiency
 STAGES
 - Models relations
