@@ -2,8 +2,6 @@ import logging
 from aiogram.utils.exceptions import (TelegramAPIError,
                                       MessageNotModified,
                                       CantParseEntities)
-
-
 from loader import dp
 
 
@@ -11,12 +9,10 @@ from loader import dp
 async def errors_handler(update, exception):
     """
     Exceptions handler. Catches all exceptions within task factory tasks.
-    :param dispatcher:
     :param update:
     :param exception:
     :return: stdout logging
     """
-
 
     if isinstance(exception, MessageNotModified):
         logging.exception('Message is not modified')
