@@ -5,10 +5,11 @@ env.read_env()
 
 BOT_TOKEN = env.str("BOT_TOKEN")
 ADMINS = env.list("ADMINS")
-IP = env.str("ip")
+HOST = env.str("HOST")
+PORT = env.str("PORT")
 
 # DB preferences
 PGUSER = env.str("PGUSER")
 PGPASSWORD = env.str("PGPASSWORD")
 DATABASE = env.str("DATABASE")
-POSTGRESURI = f"postgres:{PGUSER}:{PGPASSWORD}@{IP}/{DATABASE}"
+POSTGRES_URI = f"postgres://{PGUSER}:{PGPASSWORD}@{HOST}:{PORT}/{DATABASE}"

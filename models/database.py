@@ -1,5 +1,5 @@
 from tortoise import Tortoise, Model, fields
-from data.config import POSTGRESURI
+from data.config import POSTGRES_URI
 
 
 class AbstractBaseModel(Model):
@@ -18,8 +18,8 @@ class TimedBaseModel(AbstractBaseModel):
 
 
 class DescriptionBaseModel(TimedBaseModel):
-    name = fields.StringField(max_length=60)
-    description = fields.StringField(max_length=255)
+    name = fields.CharField(max_length=60)
+    description = fields.TextField(max_length=255)
 
     class Meta:
         abstract = True
@@ -27,8 +27,8 @@ class DescriptionBaseModel(TimedBaseModel):
 
 async def init_db():
     await Tortoise.init(
-        db_url=POSTGRESURI,
-        modules={'models': ['utils.db_api.models']}
+        db_url=POSTGRES_URI,
+        modules={'models': ['models.models']}
     )
     # Generate the schema
     await Tortoise.generate_schemas()
