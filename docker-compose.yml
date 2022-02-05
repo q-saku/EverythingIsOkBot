@@ -16,7 +16,7 @@ services:
     networks:
       - botnet
     volumes:
-      - ./postgres:/var/lib/posrgresql
+      - ./postgres:/var/lib/postgresql
 
   telegram_bot:
     container_name: bot

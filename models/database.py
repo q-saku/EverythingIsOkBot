@@ -31,4 +31,4 @@ async def init_db():
         modules={'models': ['models.models']}
     )
     # Generate the schema
-    await Tortoise.generate_schemas()
+    await Tortoise.generate_schemas(safe=True)

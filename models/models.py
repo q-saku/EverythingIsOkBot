@@ -8,15 +8,15 @@ class User(TimedBaseModel):
 
 
 class Task(DescriptionBaseModel):
-    status = fields.TextField()
-    time_spent = fields.DatetimeField()
-    date_finished = fields.DatetimeField()
+    status = fields.TextField(null=False, default="NEW")
+    time_spent = fields.IntField(null=False, default=0)
+    date_finished = fields.DatetimeField(null=True)
     user = fields.ForeignKeyField('models.User', related_name='tasks')
 
-    def __repr__(self):
+    def __str__(self):
         return f"""
-        Задача: {self.name}
-        Описание: {self.description}
+<b>Задача</b>: {self.name}
+<b>Описание</b>: {self.description}
         """
 
 
