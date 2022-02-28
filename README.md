@@ -1,6 +1,6 @@
 # EverythingIsOkBot
 Telegram bot for perfect efficiency
-STAGES
+TODO STAGES
 - Models relations
 - ORM integration
 - Interface
